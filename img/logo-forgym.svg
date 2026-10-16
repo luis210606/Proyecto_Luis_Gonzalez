@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72" role="img" aria-label="Logotipo de FORGYM">
+  <defs>
+    <linearGradient id="oro" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e6cf9f" />
+      <stop offset="0.5" stop-color="#c2a36b" />
+      <stop offset="1" stop-color="#8f7440" />
+    </linearGradient>
+    <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2e3a44" />
+      <stop offset="1" stop-color="#12171c" />
+    </linearGradient>
+  </defs>
+
+  <!-- Insignia hexagonal con doble filete dorado -->
+  <polygon points="36,3 66,19.5 66,52.5 36,69 6,52.5 6,19.5" fill="url(#fondo)" stroke="url(#oro)" stroke-width="2.5" stroke-linejoin="round" />
+  <polygon points="36,9 61,22.5 61,49.5 36,63 11,49.5 11,22.5" fill="none" stroke="url(#oro)" stroke-width="0.8" opacity="0.6" />
+
+  <!-- Rombo superior -->
+  <polygon points="36,14 39,18 36,22 33,18" fill="url(#oro)" />
+
+  <!-- Mancuerna -->
+  <rect x="24" y="34.500" width="24" height="3" rx="1.500" fill="url(#oro)" />
+  <rect x="20" y="28" width="4.500" height="16" rx="1.500" fill="url(#oro)" />
+  <rect x="47.500" y="28" width="4.500" height="16" rx="1.500" fill="url(#oro)" />
+  <rect x="15.500" y="31" width="3.500" height="10" rx="1.200" fill="url(#oro)" />
+  <rect x="53" y="31" width="3.500" height="10" rx="1.200" fill="url(#oro)" />
+
+  <!-- Filete inferior -->
+  <rect x="28" y="51" width="16" height="1.500" rx="0.750" fill="url(#oro)" />
+</svg>

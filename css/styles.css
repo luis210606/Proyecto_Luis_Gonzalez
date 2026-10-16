@@ -1,0 +1,279 @@
+/* ==========================================
+   1. PALETA DE COLORES Y CONFIGURACIÓN BASE
+   ========================================== */
+:root {
+  --color-principal: #8b0000;       /* Rojo granate más elegante y corporativo */
+  --color-principal-soft: #fff5f5;  /* Fondo suave con matiz rojo */
+  --color-cabecera: #1e293b;        /* Azul pizarra oscuro elegante para el header */
+  --color-sidebar: #0f172a;         /* Azul noche muy profundo para el menú */
+  --color-fondo: #f1f5f9;           /* Gris azulado muy suave y limpio */
+  --color-superficie: #ffffff;      /* Blanco puro para tarjetas */
+  --color-texto: #1e293b;           /* Gris oscuro lectura */
+  --color-subtexto: #64748b;        /* Gris medio para detalles */
+  --color-borde: #e2e8f0;           /* Borde fino y moderno */
+  --sombra-tarjeta: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "cabecera cabecera"
+    "sidebar contenido"
+    "pie pie";
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================================
+   2. CABECERA Y FOOTER
+   ========================================== */
+.cabecera { 
+  grid-area: cabecera; 
+  padding: 16px 28px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+  border-bottom: 3px solid var(--color-principal); /* Detalle rojo elegante abajo */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cabecera h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+.cabecera p {
+  margin: 2px 0 0 0;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+footer.pie-pagina { 
+  grid-area: pie; 
+  padding: 12px 28px;
+  background-color: #090d16;
+  color: #64748b;
+  border-top: 1px solid #1e293b;
+}
+
+footer.pie-pagina h2 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ==========================================
+   3. MENÚ LATERAL (SIDEBAR)
+   ========================================== */
+.sidebar { 
+  grid-area: sidebar; 
+  padding: 24px 16px;
+  background-color: var(--color-sidebar);
+  color: white;
+  border-right: 1px solid #1e293b;
+}
+
+.sidebar h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #64748b;
+  margin: 0 0 16px 12px;
+}
+
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.sidebar a:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding-left: 18px; /* Animación sutil al pasar el ratón */
+}
+
+/* Enlace activo discreto con borde rojo a la izquierda */
+.sidebar a.enlace-activo {
+  background-color: #1e293b;
+  color: #ffffff;
+  font-weight: 600;
+  border-left: 4px solid var(--color-principal);
+  border-radius: 0 6px 6px 0;
+}
+
+/* ==========================================
+   4. CONTENIDO PRINCIPAL Y TARJETAS
+   ========================================== */
+.contenido-principal { 
+  grid-area: contenido; 
+  padding: 28px; 
+}
+
+#dashboard > h2 {
+  margin: 0 0 4px 0;
+  font-size: 22px;
+  color: var(--color-texto);
+}
+
+#dashboard > p {
+  margin: 0 0 24px 0;
+  font-size: 14px;
+  color: var(--color-subtexto);
+}
+
+/* Rejilla de tarjetas de resumen */
+.resumen h3, .proximas-actividades h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--color-texto);
+}
+
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.tarjeta-resumen {
+  padding: 20px;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  box-shadow: var(--sombra-tarjeta);
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-resumen:hover {
+  transform: translateY(-2px);
+}
+
+.tarjeta-resumen h4 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-subtexto);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tarjeta-resumen p {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-principal);
+}
+
+/* Tarjeta destacada con leve tinte rojo */
+.tarjeta-actividades {
+  background-color: var(--color-principal-soft);
+  border-color: #fecdd3;
+}
+.bloque-panel{
+  background-color: var(--color-superficie);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.lista-accesos{
+  list-style: none;
+   padding: 0;
+   margin: 0;
+}
+.lista-accesos li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-borde);
+  font-size: 14px;
+}
+.lista-incidencias {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tarjeta-incidencia {
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.tarjeta-incidencia-warning {
+  background-color: #fff7ed;
+  border: 1px solid #ffedd5;
+  color: #c2410c;
+}
+
+.tarjeta-incidencia-danger {
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #b91c1c;
+}
+
+.tarjeta-incidencia strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.tarjeta-incidencia p {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+
+/* ==========================================
+   6. RESPONSIVO
+   ========================================== */
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "cabecera"
+      "sidebar"
+      "contenido"
+      "pie";
+  }
+
+  .resumen {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}

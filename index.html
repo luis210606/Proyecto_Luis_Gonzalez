@@ -3,81 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FORGYM</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>FORGYM - Panel Principal</title>
   </head>
   <body>
-    <header>
-      <h1>FORGYM</h1>
-      <p>Aplicación para gestionar socios, clases y personal de un gimnasio.</p>
+
+    <!-- 1. CABECERA -->
+    <header class="cabecera">
+      <div class="texto-cabecera">
+        <h1>ForGym</h1>
+        <p>Sistema de Gestión Integral para Centros Deportivos</p>
+      </div>
+      <div class="header-user">
+        <span>👤 #username</span>
+      </div>
     </header>
-    <aside>
+
+    <!-- 2. MENÚ LATERAL (SIDEBAR) -->
+    <aside class="sidebar">
       <nav>
-        <h2>Menú</h2>
-
+        <h2>Menú principal</h2>
         <ul>
-          <li>
-            <h3><a href="Dasdboard">Panel Principal</a></h3>
-          </li>
-
-          <li>
-            <h3><a href="Recepcion">Recepcion</a></h3>
-          </li>
-
-          <li>
-            <h3><a href="Clases">Clases</a></h3>
-          </li>
-
-          <li>
-            <h3><a href="Calendario">Calendario</a></h3>
-          </li>
-
-          <li>
-            <h3><a href="Personal">Personal</a></h3>
-          </li>
+          <li><a class="enlace-activo" href="#dashboard">Panel principal</a></li>
+          <li><a href="recepcion.html">Recepción</a></li>
+          <li><a href="#socios">Socios</a></li>
+          <li><a href="#personal">Personal</a></li>
+          <li><a href="#actividades">Actividades</a></li>
+          <li><a href="#calendario">Calendario</a></li>
+          <li><a href="#configuracion">Configuración</a></li>
         </ul>
       </nav>
     </aside>
-    <main>
-      <section id="Dasdboard"> 
-        <h2>Panel principal</h2>
-        
 
-      <article>
-        <h3>Datos curiosos sobre nosotros</h3>
-      </article>
-      <article></article>
-      <article></article>
-      <article></article>
-    </main><main>
-      <!-- Panel principal -->
+    <!-- 3. CONTENIDO PRINCIPAL -->
+    <main class="contenido-principal">
       <section id="dashboard">
         <h2>Panel principal</h2>
-        <p>Vista general del estado del gimnasio.</p>
-
-        <!-- Resumen de indicadores -->
-        <section>
-          <h3>Resumen</h3>
-
-          <article>
+        <p>Resumen general de la actividad y estado actual del gimnasio.</p>
+        <h3>Indicadores Clave</h3>
+        <!-- Resumen de indicadores ampliados (4 columnas) -->
+        <section class="resumen">
+         
+          <article class="tarjeta-resumen">
             <h4>Socios activos</h4>
-            <p>350 socios</p>
+            <p>350</p>
           </article>
 
-          <article>
-            <h4>Clases de hoy</h4>
-            <p>12 clases</p>
+          <article class="tarjeta-resumen">
+            <h4>Aforo Actual</h4>
+            <p>60 <span class="sub-aforo">/ 300 máx</span></p>
           </article>
 
-          <article>
-            <h4>Entrenadores</h4>
-            <p>8 entrenadores</p>
+          <article class="tarjeta-resumen tarjeta-aviso">
+            <h4>Cuotas Pendientes</h4>
+            <p>4</p>
+          </article>
+
+          <article class="tarjeta-resumen">
+            <h4>Clases Hoy</h4>
+            <p>12</p>
           </article>
         </section>
+
+        <!-- Bloque inferior dividido en dos columnas: Accesos e Incidencias -->
+        <div class="dashboard-grid-inferior">
+          
+          <!-- Últimos Accesos -->
+          <section class="bloque-panel">
+            <h3>Últimos Accesos</h3>
+            <ul class="lista-accesos">
+              <li>
+                <span class="hora-acceso">14:45h</span>
+                <span class="nombre-socio">Maria López</span>
+                <span class="badge-ok">Acceso permitido</span>
+              </li>
+              <li>
+                <span class="hora-acceso">14:46h</span>
+                <span class="nombre-socio">Juan Pérez</span>
+                <span class="badge-warning">Cuota pendiente</span>
+              </li>
+              <li>
+                <span class="hora-acceso">14:47h</span>
+                <span class="nombre-socio">Carlos López</span>
+                <span class="badge-ok">Acceso permitido</span>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Incidencias del Centro -->
+          <section class="bloque-panel">
+            <h3>Incidencias del Centro</h3>
+            <div class="lista-incidencias">
+              <div class="tarjeta-incidencia-warning">
+                <strong>Máquina cardio #4</strong>
+                <p>Rota la pantalla (Pendiente revisión)</p>
+              </div>
+              <div class="tarjeta-incidencia-danger">
+                <strong>Lavabo Masc. #2</strong>
+                <p>Sin servicio (Aviso a fontanero)</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
       </section>
     </main>
 
-    <footer>
-      <h2>FORGYM version 1.0</h2>
+    <!-- 4. PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+      <h2>ForGym — Versión 1.0</h2>
     </footer>
+
   </body>
 </html>
